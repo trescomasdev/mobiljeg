@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 import './css/shadow.css';
+import './css/wyswig.css';
 import './css/responsive-table.css';
 import 'font-awesome/css/font-awesome.min.css';
 

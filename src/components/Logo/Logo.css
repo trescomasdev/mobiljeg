@@ -4,8 +4,17 @@
   font-size: 48px;
 }
 
+#logo img{
+  width: 60px;
+  height: auto;
+}
+
 #logo span{
   color: #fff;
+}
+
+#logo span span{
+  color: #333;
 }
 
 @media screen and (max-width: 480px) {

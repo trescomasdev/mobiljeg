@@ -13,6 +13,8 @@ import Checkout from "./containers/Checkout/Checkout";
 import BuyTicket from "./containers/BuyTicket/BuyTicket";
 import TicketList from "./containers/TicketList/TicketList";
 import Options from "./containers/Options/Options";
+import License from "./containers/License/License";
+import Privacy from "./containers/Privacy/Privacy";
 
 import LoginRoute from './components/LoginRoute';
 import PrivateRoute from './components/PrivateRoute';
@@ -29,6 +31,8 @@ class Router extends Component {
           <Route render={(props) => (<Header {...props}/>)}/>
           <Switch>
             <Route exact path="/" render={(props) => (<BuyTicket {...props}/>)}/>
+            <Route exact path="/vasarlasi-feltetelek" render={(props) => (<License {...props}/>)}/>
+            <Route exact path="/adatvedelmi-nyilatkozat" render={(props) => (<Privacy {...props}/>)}/>
             <PrivateRoute  path="/jegyek" requiredRole="admin" render={(props) => (<TicketList {...props}/>)}/>
             <PrivateRoute  path="/beallitasok" requiredRole="admin" render={(props) => (<Options {...props}/>)}/>
             <PrivateRoute  path="/profil" render={(props) => (<Profil {...props}/>)}/>

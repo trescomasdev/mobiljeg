@@ -3,11 +3,15 @@ footer#footer{
   padding: 20px;
   display: inline-block;
   width: 100%;
-  text-align: center ;  
+  text-align: center ;
 }
 
 footer#footer #logo{
   font-size: 24px;
+}
+
+footer#footer #logo img{
+  width: 30px;
 }
 
 footer#footer .copyright{

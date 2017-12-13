@@ -8,7 +8,7 @@
 #menu-header .user-name{
   padding: 20px;
   border-bottom: 1px solid var(--alt-light-color);
-  background: var(--main-dark-color);
+  background: var(--main-inv-color);
   color: var(--main-color);
 }
 
@@ -52,6 +52,11 @@
   margin-right: 5px;
 }
 
+.bm-menu div.restricted-items{
+  display: flex !important;
+  flex-direction: column ;
+}
+
 
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -91,6 +96,16 @@
   fill: #373a47;
 }
 
+.bm-item-list div.divider{
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: var(--main-inv-color) ;
+  color: var(--main-color);
+  text-transform: uppercase;
+  outline: none;
+}
+
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
@@ -101,7 +116,7 @@
   padding: 20px;
   background:#0095e5;
   text-align: center ;
-  text-transform: uppercase ;
+  text-transform: none ;
   text-decoration: none ;
   letter-spacing: 2px;
   color: white;
@@ -113,8 +128,8 @@
 }
 
 .bm-item-list a:hover{
-  background: white;
-  color: #0095e5;
+  background: #efefef;
+  color: var(--main-color);
 }
 
 /* Styling of overlay */
