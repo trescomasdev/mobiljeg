@@ -4,6 +4,7 @@ footer#footer{
   display: inline-block;
   width: 100%;
   text-align: center ;
+  position: relative;
 }
 
 footer#footer #logo{
@@ -20,4 +21,11 @@ footer#footer .copyright{
   color: #efefef;
   display: block ;
   width: 100%;
+}
+
+footer#footer .barion-logo{
+  position: absolute;
+  width: 280px;
+  right: 20px;
+  bottom: 20px;
 }

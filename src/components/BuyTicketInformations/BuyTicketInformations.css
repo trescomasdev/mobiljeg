@@ -14,3 +14,9 @@
 #buy-ticket-informations h1 .fa{
   margin-right: 5px;
 }
+
+@media only screen and (max-width: 680px) {
+    #buy-ticket-informations {
+      padding: 20px;
+    }
+}
