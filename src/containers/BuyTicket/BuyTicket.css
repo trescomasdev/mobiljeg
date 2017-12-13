@@ -1,0 +1,18 @@
+#buy-tickets .buy-tickets{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#buy-tickets .buy-tickets > div{
+  flex-basis: calc(48% - 1px);
+  margin: 1%;
+}
+
+@media screen and (max-width: 480px) {
+    #buy-tickets .buy-tickets > div{
+      flex-basis: calc(100% - 2px);
+      margin: 0;
+    }
+}

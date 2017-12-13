@@ -1,0 +1,50 @@
+.sortable-table tr th {
+  cursor: pointer;
+}
+
+.sortable-table th.reactable-header-sort-desc:after {
+  content: '\25B2';
+  font-size: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.sortable-table th.reactable-header-sort-asc:after {
+  content: '\25BC';
+  font-size: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.sortable-table tr th,
+.sortable-table tr td{
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.sortable-table .reactable-data tr:nth-child(even):hover td,
+.sortable-table .reactable-data tr:nth-child(odd):hover td{
+  background: var(--main-color);
+  cursor: pointer;
+  color: white
+}
+
+.reactable-next-page,
+.reactable-previous-page,
+.reactable-page-button{
+  padding: 0 5px;
+  color: var(--main-inv-dark-color)
+}
+
+.reactable-page-button.reactable-current-page{
+  color: var(--main-color);
+}
+
+.reactable-next-page:hover,
+.reactable-previous-page:hover,
+.reactable-page-button:hover{
+  text-decoration: none;
+  color: var(--main-color);
+}

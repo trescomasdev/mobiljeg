@@ -1,0 +1,38 @@
+{
+  "name": "mobiljeg",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "create-react-class": "^15.6.2",
+    "font-awesome": "^4.7.0",
+    "history": "^4.7.2",
+    "immutability-helper": "^2.4.0",
+    "moment": "^2.19.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-barcode": "^1.3.2",
+    "react-bootstrap": "^0.31.5",
+    "react-burger-menu": "^2.1.9",
+    "react-dom": "^16.0.0",
+    "react-fontawesome": "^1.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.7",
+    "reactable": "vladnicula/reactable",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^4.4.1",
+    "redux-thunk": "^2.2.0",
+    "validator": "^9.1.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && cp -rf ./build/ ../mobiljeg-server/build-client/ && echo Build was moved to server!",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,19 @@
+footer#footer{
+  background-color: #0095e5;
+  padding: 20px;
+  display: inline-block;
+  width: 100%;
+  text-align: center ;  
+}
+
+footer#footer #logo{
+  font-size: 24px;
+}
+
+footer#footer .copyright{
+  float: right;
+  line-height: 24px;
+  color: #efefef;
+  display: block ;
+  width: 100%;
+}

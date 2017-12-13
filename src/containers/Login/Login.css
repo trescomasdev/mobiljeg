@@ -1,0 +1,18 @@
+div#login .login-forms{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+div#login .login-forms > div{
+  flex-basis: calc(48% - 1px);
+  margin: 1%;
+}
+
+@media screen and (max-width: 480px) {
+    div#login .login-forms > div{
+      flex-basis: calc(100% - 2px);
+      margin: 0;
+    }
+}

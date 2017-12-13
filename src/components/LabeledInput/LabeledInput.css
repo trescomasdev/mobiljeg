@@ -1,0 +1,152 @@
+.labeled-input{
+  position: relative;
+  margin: 15px 0;
+}
+
+.labeled-input label{
+  position: relative;
+  display: block;
+  margin: 0;
+}
+
+.labeled-input .error{
+  color: var(--main-inv-color);
+  background: var(--invalid-color);
+  padding: 5px;
+  display: block
+}
+
+.labeled-input label input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: none;
+  padding: 15px;
+  background: transparent;
+  border: 1px solid var(--alt-dark-color);
+  color: var(--main-color);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.labeled-input label.valid input{
+  border-color: var(--valid-color);
+}
+
+.labeled-input label.valid:after{
+  content: '';
+  position: absolute;
+  background: var(--valid-color);
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  content: "\f00c";
+  font-family: FontAwesome;
+  width: 20px;
+  height: 20px;
+  text-align: center ;
+  line-height: 20px;
+  margin-right: 10px;
+}
+
+.labeled-input label.invalid input{
+  border-color: var(--invalid-color);
+}
+
+.labeled-input label.invalid:after{
+  content: '';
+  position: absolute;
+  background: var(--invalid-color);
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  content: "\F00D";
+  font-family: FontAwesome;
+  width: 20px;
+  height: 20px;
+  text-align: center ;
+  line-height: 20px;
+  margin-right: 10px;
+}
+
+.labeled-input label.invertColor input{
+  color: var(--alt-color);
+}
+
+.labeled-input label input::-webkit-input-placeholder {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: var(--alt-dark-color);
+}
+
+.labeled-input label input::-moz-placeholder {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: var(--alt-dark-color);
+}
+
+.labeled-input label input:-ms-input-placeholder {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: var(--alt-dark-color);
+}
+
+.labeled-input label input::placeholder {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: var(--alt-dark-color);
+}
+
+.labeled-input label input:focus,
+.labeled-input label.populated input {
+  padding-top: 28px;
+  padding-bottom: 12px;
+}
+
+.labeled-input label input:focus::-webkit-input-placeholder,
+.labeled-input label.populated input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.labeled-input label input:focus::-moz-placeholder,
+.labeled-input label.populated input::-moz-placeholder {
+  color: transparent;
+}
+
+.labeled-input label input:focus:-ms-input-placeholder,
+.labeled-input label.populated input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.labeled-input label input:focus::placeholder,
+.labeled-input label.populated input::placeholder {
+  color: transparent;
+}
+
+.labeled-input label input:focus + span,
+.labeled-input label.populated input + span {
+  opacity: 1;
+  top: 10px;
+  left: 15px;
+}
+
+.labeled-input label input + span {
+  font-weight: bold;
+  color: var(--main-color);
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.labeled-input label.invertColor input + span {
+  color: var(--alt-dark-color);
+}

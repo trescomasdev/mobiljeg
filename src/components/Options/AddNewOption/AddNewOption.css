@@ -1,0 +1,13 @@
+.add-new-option-wrapper{
+  display: flex;
+}
+
+.add-new-option-wrapper > div{
+  flex: 1;
+}
+
+.add-new-option-wrapper > button{
+  flex: 1;
+  max-width: 180px;
+  margin: 15px 0;
+}

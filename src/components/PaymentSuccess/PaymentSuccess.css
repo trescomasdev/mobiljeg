@@ -1,0 +1,76 @@
+#payment-success{
+  padding: 40px;
+  background: var(--main-color);
+  margin: 40px;
+}
+
+#payment-success h1{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: var(--alt-color)
+}
+
+#payment-success h1 .fa{
+  margin-right: 5px;
+}
+
+#payment-success .ticket-reciept{
+  width: 100%;
+  color: var(--main-inv-color);
+}
+
+#payment-success .ticket-reciept tbody td{
+  padding: 10px;
+  border-bottom: 1px solid var(--alt-light-color)
+}
+
+#payment-success .ticket-reciept tfoot td{
+  padding: 10px;
+  border-top: 2px solid var(--text-color);
+  font-weight: bolder;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+#payment-success .ticket-reciept tr{
+  background: var(--alt-color);
+  color: var(--text-color)
+}
+
+#payment-success .ticket-reciept tbody tr:nth-child(even){
+  background: var(--main-inv-color);
+}
+
+#payment-success .ticket-reciept tfoot td:nth-child(even){
+  color: var(--main-color);
+}
+
+#payment-success .ticket-reciept tbody td:nth-child(even),
+#payment-success .ticket-reciept tfoot td:nth-child(even){
+  text-align: right;
+}
+
+#payment-success div.actions-holder{
+  display: flex;
+  flex-direction: row;
+}
+
+#payment-success div.actions-holder > button{
+  flex: 1;
+  margin: 10px 20px 0;
+  font-size: 16px;
+}
+
+#payment-success div.actions-holder > button .fa{
+  margin-right: 5px;
+}
+
+@media print{
+  body * { visibility: hidden; position: relative;}
+  #payment-success * { visibility: visible; }
+  #payment-success { position: fixed; top: 0; left: 0; }
+  #payment-success div.actions-holder *{
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,29 @@
+.option{
+  display: flex;
+}
+
+.option.edited .option-actions,
+.option.edited .labeled-input label input{
+  border-color: var(--invalid-color)
+}
+
+.option .option-actions{
+  flex: 1;
+  max-width: 20px;
+  display: flex ;
+  flex-direction: column ;
+  align-items: center ;
+  margin: 15px 0;
+  border: 1px solid var(--alt-dark-color);
+  justify-content: space-around;
+  border-left: 0;
+}
+
+.option .option-actions > span{
+
+}
+
+.option .option-actions > span:hover{
+  color: var(--main-color);
+  cursor: pointer;
+}

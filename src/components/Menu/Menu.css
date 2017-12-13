@@ -1,0 +1,128 @@
+#menu-header{
+  background: #0095e5;
+  border-bottom: 1px solid var(--alt-light-color);
+  text-align: center;
+  color: white;
+}
+
+#menu-header .user-name{
+  padding: 20px;
+  border-bottom: 1px solid var(--alt-light-color);
+  background: var(--main-dark-color);
+  color: var(--main-color);
+}
+
+#menu-header .user-name span.fa{
+  line-height: 21px;
+  margin: 0 10px;
+  border: 1px solid var(--main-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+#menu-header .require-auth .actions,
+#menu-header .authenticated .actions{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+#menu-header .require-auth .actions button,
+#menu-header .authenticated .actions button{
+  background: none;
+  border: none;
+  font-size: 12px;
+  padding: 10px 0;
+  flex: 1;
+}
+
+#menu-header .require-auth .actions button:nth-child(odd),
+#menu-header .authenticated .actions button:nth-child(odd){
+  border-right: 1px solid var(--alt-light-color);
+}
+
+#menu-header .require-auth .actions button:hover,
+#menu-header .authenticated .actions button:hover{
+  background: var(--main-inv-color);
+  color: var(--main-color)
+}
+
+#menu-header .require-auth .actions button .fa,
+#menu-header .authenticated .actions button .fa{
+  margin-right: 5px;
+}
+
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #e3e3e3;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  display: none;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0;
+}
+
+.bm-item-list a{
+  padding: 20px;
+  background:#0095e5;
+  text-align: center ;
+  text-transform: uppercase ;
+  text-decoration: none ;
+  letter-spacing: 2px;
+  color: white;
+  -webkit-transition: all var(--transistion-time) var(--transistion-type);
+  -moz-transition: all var(--transistion-time) var(--transistion-type);
+  -o-transition: all var(--transistion-time) var(--transistion-type);
+  transition: all var(--transistion-time) var(--transistion-type);
+  border-bottom: 1px solid var(--alt-light-color);
+}
+
+.bm-item-list a:hover{
+  background: white;
+  color: #0095e5;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bm-menu-wrap  div.bm-menu{
+  overflow: hidden !important;
+  padding: 0;
+}
