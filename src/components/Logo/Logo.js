@@ -8,8 +8,10 @@ class Logo extends Component {
   render() {
     return(
       <div id="logo">
-        <img src={logo} />
-        <span id="logo">MOBIL<span>JÉG</span></span>
+        <div>
+          <img src={logo} />
+        </div>
+        <span>MOBIL<span>JÉG</span></span>
       </div>
     );
 

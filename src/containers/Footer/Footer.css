@@ -29,3 +29,15 @@ footer#footer .barion-logo{
   right: 20px;
   bottom: 20px;
 }
+
+@media screen and (max-width: 480px) {
+
+  footer#footer .barion-logo{
+    position: relative;
+    width: 280px;
+    margin-top: 10px;
+    right: initial ;
+    bottom: initial ;
+  }
+
+}

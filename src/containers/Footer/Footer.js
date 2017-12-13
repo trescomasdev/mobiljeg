@@ -12,9 +12,9 @@ class Footer extends Component {
     return(
       <footer id="footer">
         <div className="footer-content">
-          <img src={barion} className="barion-logo"/>
           <Logo />
           <span className="copyright">© Minden jog fenttartva.</span>
+          <img src={barion} className="barion-logo"/>
         </div>
       </footer>
     );

@@ -1,7 +1,11 @@
 #logo{
   margin: 0;
   color: #333;
+  display: flex;
   font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #logo img{
@@ -19,6 +23,7 @@
 
 @media screen and (max-width: 480px) {
     #logo{
-      font-size: 32px;
+      font-size: 26px;
+      margin-left: 40px;
     }
 }
