@@ -127,7 +127,7 @@ button{
   color: #333;
   font-size: 24px;
   display: inline-block;
-  padding: 0 40px;
+  padding: 0;
 }
 
 .block-title-holder .block-title::before{

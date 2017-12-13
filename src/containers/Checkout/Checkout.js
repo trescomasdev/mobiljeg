@@ -37,9 +37,8 @@ class Checkout extends Component {
 
           <div className="container">
 
-            <div className="block-title-holder">
+            <div className="block-content">
               <div className="col-md-12">
-                <h1 className="block-title">Rendelés összesítő</h1>
                 <PaymentSuccess payment={this.props.payment} ticket={this.props.ticket} renewSession={this.renewSession} printTicker={this.printTicker}/>
               </div>
             </div>

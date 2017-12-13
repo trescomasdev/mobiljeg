@@ -66,6 +66,18 @@
   margin-right: 5px;
 }
 
+@media screen and (max-width: 480px) {
+  #payment-success{
+    padding: 5px;
+    margin: 0
+  }
+
+  #payment-success div.actions-holder{
+    flex-direction: column;
+  }
+}
+
+
 @media print{
   body * { visibility: hidden; position: relative;}
   #payment-success * { visibility: visible; }
