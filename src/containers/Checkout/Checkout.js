@@ -5,6 +5,7 @@ import { checkStatus } from '../../actions/ticketActions';
 
 import PaymentSuccess from '../../components/PaymentSuccess/PaymentSuccess';
 
+import './Checkout.css';
 
 class Checkout extends Component {
   constructor(props){
@@ -33,7 +34,7 @@ class Checkout extends Component {
 
   render() {
     return (
-      <div id="profil" className="section">
+      <div id="checkout" className="section">
 
           <div className="container">
 

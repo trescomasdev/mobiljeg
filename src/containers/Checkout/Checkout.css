@@ -1,0 +1,5 @@
+@media screen and (max-width: 480px) {
+    #checkout .col-md-12{
+      padding: 0;
+    }
+}
