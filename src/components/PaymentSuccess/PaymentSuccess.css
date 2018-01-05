@@ -66,6 +66,17 @@
   margin-right: 5px;
 }
 
+#payment-succes .barcodes{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+#payment-succes .barcodes .barcode{
+
+}
+
 @media screen and (max-width: 480px) {
   #payment-success{
     padding: 5px;
@@ -75,6 +86,13 @@
   #payment-success div.actions-holder{
     flex-direction: column;
   }
+
+  #payment-succes .barcodes{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }  
 }
 
 

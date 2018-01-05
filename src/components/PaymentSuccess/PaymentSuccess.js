@@ -8,7 +8,9 @@ class PaymentSuccess extends Component {
 
   render() {
     let barcodes = this.props.ticket.barcodes && this.props.ticket.barcodes.length > 0 ? this.props.ticket.barcodes.map((data, key) =>
-      <Barcode value={data} />
+      <div className="barcode">
+        <Barcode value={data} />
+      </div>
     ) : []
 
     return(
