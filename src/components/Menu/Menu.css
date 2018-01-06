@@ -8,8 +8,8 @@
 #menu-header .user-name{
   padding: 20px;
   border-bottom: 1px solid var(--alt-light-color);
-  background: var(--main-inv-color);
-  color: var(--main-color);
+  background: #007bbd;
+  color: var(--main-inv-color);
 }
 
 #menu-header .user-name span.fa{
@@ -43,8 +43,7 @@
 
 #menu-header .require-auth .actions button:hover,
 #menu-header .authenticated .actions button:hover{
-  background: var(--main-inv-color);
-  color: var(--main-color)
+  background: #0088d1
 }
 
 #menu-header .require-auth .actions button .fa,
@@ -100,8 +99,8 @@
   display: block;
   text-align: center;
   padding: 10px;
-  background: var(--main-inv-color) ;
-  color: var(--main-color);
+  background: #007bbd;
+  color: var(--main-inv-color);
   text-transform: uppercase;
   outline: none;
 }
@@ -129,8 +128,7 @@
 }
 
 .bm-item-list a:hover{
-  background: #efefef;
-  color: var(--main-color);
+  background: #0088d1;
 }
 
 /* Styling of overlay */

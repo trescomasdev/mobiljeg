@@ -9,7 +9,7 @@ class Logo extends Component {
     return(
       <div id="logo">
         <div>
-          <img src={logo} />
+          <img alt="logo" src={logo} />
         </div>
         <span>MOBIL<span>JÉG</span></span>
       </div>

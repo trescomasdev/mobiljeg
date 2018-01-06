@@ -14,7 +14,7 @@ class Footer extends Component {
         <div className="footer-content">
           <Logo />
           <span className="copyright">© Minden jog fenttartva.</span>
-          <img src={barion} className="barion-logo"/>
+          <img alt="barion" src={barion} className="barion-logo"/>
         </div>
       </footer>
     );

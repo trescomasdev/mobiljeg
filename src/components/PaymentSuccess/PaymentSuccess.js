@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import Barcode from 'react-barcode';
+import moment from 'moment';
+import 'moment/locale/hu';
 
 import './PaymentSuccess.css';
 
 class PaymentSuccess extends Component {
 
   render() {
+    moment.lang("hu")
+
     let barcodes = this.props.ticket.barcodes && this.props.ticket.barcodes.length > 0 ? this.props.ticket.barcodes.map((data, key) =>
-      <div className="barcode">
-        <Barcode value={data} />
-      </div>
+        <div key={key} className="barcode">
+          <h3>Jégpálya belépőjegy</h3>
+          <span>#{key + 1}</span>
+          <span className="date">{moment().format("MMMM D")}</span>
+          <Barcode value={data} width={4}/>
+        </div>
     ) : []
 
     return(

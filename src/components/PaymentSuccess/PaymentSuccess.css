@@ -66,15 +66,46 @@
   margin-right: 5px;
 }
 
-#payment-succes .barcodes{
+#payment-success .barcodes{
   display: flex;
   flex-direction: row;
   align-content: center;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 }
 
-#payment-succes .barcodes .barcode{
+#payment-success .barcodes .barcode{
+  display: inline-flex;
+  justify-content: center;
+  margin: 20px;
+  margin-bottom: 40px;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid var(--main-inv-color);
+  background: #fafafa;
+  padding:
+}
 
+#payment-success .barcodes .barcode h3{
+  font-size: 28px;
+  font-weight: bold;
+  padding: 30px 10px 0;
+  color: var(--main-dark-color)
+}
+
+#payment-success .barcodes .barcode span{
+  padding: 20px 0;
+  font-size: 28px;
+  color: var(--main-dark-color)
+}
+
+#payment-success .barcodes .barcode span.date{
+  font-size: 24px;
+  color: var(--main-color)
+}
+
+#payment-success .barcodes .barcode svg{
+  background: var(--main-inv-color);
+  width: 100%;
 }
 
 @media screen and (max-width: 480px) {
@@ -87,19 +118,19 @@
     flex-direction: column;
   }
 
-  #payment-succes .barcodes{
+  #payment-success .barcodes{
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-  }  
+  }
 }
 
 
 @media print{
-  body * { visibility: hidden; position: relative;}
-  #payment-success * { visibility: visible; }
-  #payment-success { position: fixed; top: 0; left: 0; }
+  body * { visibility: hidden;}
+  #payment-success .barcodes * { visibility: visible; }
+  #payment-success .barcodes{ position: fixed; top: 0; left: 0; }
   #payment-success div.actions-holder *{
     visibility: hidden;
   }
