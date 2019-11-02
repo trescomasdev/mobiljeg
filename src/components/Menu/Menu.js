@@ -27,15 +27,15 @@ class Menu extends Component {
     return(
       <BurgerMenu pageWrapId={"wrapper-content"} outerContainerId={"header"} isOpen={ this.state.menuOpen }>
         <MenuHeader {...this.props} handleMenuClick={this.handleMenuClick}/>
-        <Link to={`${process.env.PUBLIC_URL}/`} onClick={this.handleMenuClick} id="buy-tickets" >Jegyvásárlás</Link>
-        <Link to={`${process.env.PUBLIC_URL}/vasarlasi-feltetelek`} onClick={this.handleMenuClick} id="vasarlasi-feltetelek" >Vásárlási feltételek</Link>
-        <Link to={`${process.env.PUBLIC_URL}/adatvedelmi-nyilatkozat`} onClick={this.handleMenuClick} id="adatvedelmi-nyilatkozat" >Adatvédelmi nyilatkozat</Link>
-        <Link to={`${process.env.PUBLIC_URL}/barion-informaciok`} onClick={this.handleMenuClick} id="barion-informaciok" >Barion Információk</Link>
+        <Link to={`/`} onClick={this.handleMenuClick} id="buy-tickets" >Jegyvásárlás</Link>
+        <Link to={`/vasarlasi-feltetelek`} onClick={this.handleMenuClick} id="vasarlasi-feltetelek" >Vásárlási feltételek</Link>
+        <Link to={`/adatvedelmi-nyilatkozat`} onClick={this.handleMenuClick} id="adatvedelmi-nyilatkozat" >Adatvédelmi nyilatkozat</Link>
+        <Link to={`/barion-informaciok`} onClick={this.handleMenuClick} id="barion-informaciok" >Barion Információk</Link>
         {this.props.isAuthenticated && this.props.role === "admin" ?
           <div className="restricted-items">
             <div className="divider">Admin</div>
-            <Link to={`${process.env.PUBLIC_URL}/jegyek`} onClick={this.handleMenuClick} id="ticket-list" >Jegyek</Link>
-            <Link to={`${process.env.PUBLIC_URL}/beallitasok`} onClick={this.handleMenuClick} id="options" >Beállítások</Link>
+            <Link to={`/jegyek`} onClick={this.handleMenuClick} id="ticket-list" >Jegyek</Link>
+            <Link to={`/beallitasok`} onClick={this.handleMenuClick} id="options" >Beállítások</Link>
           </div>
         :
           ""
