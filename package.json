@@ -1,5 +1,6 @@
 {
   "name": "mobiljeg",
+  "homepage": "https://mobiljeg.hu/jegyek",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
