@@ -43,7 +43,7 @@ export function checkTicketStatus(id){
 export function checkStatus(id){
   return function(dispatch, getState){
       dispatch({type: "CHECK_PAYMENT_STATUS_STARTED"})
-      request.get("https://api.test.barion.com/v2/Payment/GetPaymentState/?POSKEY=c7fac0dccb2748c6814584a61f18bd7d&PaymentId=" + id, {withCredentials: false})
+      request.get("https://api.barion.com/v2/Payment/GetPaymentState/?POSKEY=bb33c0ea62a24af8b1241ffa33f7bcf5&PaymentId=" + id, {withCredentials: false})
         .then((response) => {
           dispatch({type: "CHECK_PAYMENT_STATUS_SUCCESS", payload: response.data})
           dispatch(checkTicketStatus(response.data.PaymentRequestId))
@@ -63,7 +63,7 @@ export function barionPay(e){
     request.post(REMOTE_URL + "/data/ticket/new-ticket", inputs)
       .then((response) => {
         const transaction_data = {
-          "POSKey": "c7fac0dccb2748c6814584a61f18bd7d",
+          "POSKey": "bb33c0ea62a24af8b1241ffa33f7bcf5",
           "PaymentType": "Immediate",
           "GuestCheckOut": true,
           "FundingSources": ["All"],
@@ -86,7 +86,7 @@ export function barionPay(e){
         }
 
         dispatch({type: "CREATE_NEW_TICKET_SUCCESS"})
-        request.post("https://api.test.barion.com/v2/Payment/Start/", transaction_data, {withCredentials: false})
+        request.post("https://api.barion.com/v2/Payment/Start/", transaction_data, {withCredentials: false})
           .then((response) => {
             window.location.replace(response.data.GatewayUrl)
           })
