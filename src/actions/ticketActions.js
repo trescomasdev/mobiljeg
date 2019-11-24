@@ -70,6 +70,8 @@ export function barionPay(e){
           "PaymentRequestId": response.data._id,
           "Locale": "hu-HU",
           "OrderNumber": response.data._id,
+          "CallbackUrl": "https://mobiljeg.hu:7235/data/ticket/ticket-status",
+          "RedirectUrl": "https://mobiljeg.hu/jegyek/rendeles",
           "Currency": "HUF",
           "Transactions": [{
               "POSTransactionId": response.data._id,
