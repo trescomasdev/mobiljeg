@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from "react-redux"
 
 import { checkStatus } from '../../actions'
-import { PaymentSuccess } from '../../components'
+import { PaymentSuccess } from '../../views'
 
 function Checkout({ticket, payment, location, checkStatus: _checkStatus}) {
 
