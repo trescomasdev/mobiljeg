@@ -5,13 +5,13 @@ import 'moment/locale/hu'
 
 import './PaymentSuccess.css'
 
-export default function PaymentSuccess() {
+export default function PaymentSuccess({payment, ticket}) {
   moment.locale("hu")
 
   return(
     <div id="payment-success" className="shadow-6">
       <div>
-        {this.props.payment.Status === "Succeeded"
+        {payment.Status === "Succeeded"
           ?
             <h1><FontAwesome name='check-circle' />Sikeres vásárlás!</h1>
           :
@@ -21,34 +21,34 @@ export default function PaymentSuccess() {
           <tbody>
             <tr>
               <td>Azonosító</td>
-              <td>{this.props.payment.PaymentId}</td>
+              <td>{payment.PaymentId}</td>
             </tr>
             <tr>
               <td>Név</td>
-              <td>{this.props.ticket.name}</td>
+              <td>{ticket.name}</td>
             </tr>
             <tr>
               <td>Email</td>
-              <td>{this.props.ticket.email}</td>
+              <td>{ticket.email}</td>
             </tr>
-            {this.props.ticket.phone !== ""
+            {ticket.phone !== ""
               ?
               <tr>
                 <td>Telefon</td>
-                <td>{this.props.ticket.phone}</td>
+                <td>{ticket.phone}</td>
               </tr>
               :
               <tr/>
             }
             <tr>
               <td>Mennyiség:</td>
-              <td>{this.props.ticket.qty}</td>
+              <td>{ticket.qty}</td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td><b>Összesen</b></td>
-              <td>{this.props.ticket.summary ? this.props.ticket.summary + " HUF" : "" } </td>
+              <td>{ticket.summary ? ticket.summary + " HUF" : "" } </td>
             </tr>
           </tfoot>
         </table>
