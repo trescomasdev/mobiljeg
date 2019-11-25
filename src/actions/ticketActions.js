@@ -1,5 +1,5 @@
-import request from '../utils/request';
-import { REMOTE_URL } from '../config/app';
+import request from '../utils/request'
+import { REMOTE_URL, BARIONKEY, BARIONURL, BARION_CALLBACK_URL, BARION_RETURN_URL } from '../config'
 
 export function getTickets(e){
   return function(dispatch, getState){
@@ -43,7 +43,7 @@ export function checkTicketStatus(id){
 export function checkStatus(id){
   return function(dispatch, getState){
       dispatch({type: "CHECK_PAYMENT_STATUS_STARTED"})
-      request.get("https://api.barion.com/v2/Payment/GetPaymentState/?POSKEY=bb33c0ea62a24af8b1241ffa33f7bcf5&PaymentId=" + id, {withCredentials: false})
+      request.get(`https://${BARIONURL}/v2/Payment/GetPaymentState/?POSKEY=${BARIONKEY}&PaymentId=${id}`, {withCredentials: false})
         .then((response) => {
           dispatch({type: "CHECK_PAYMENT_STATUS_SUCCESS", payload: response.data})
           dispatch(checkTicketStatus(response.data.PaymentRequestId))
@@ -57,21 +57,21 @@ export function checkStatus(id){
 export function barionPay(e){
   return function(dispatch, getState){
 
-    let inputs = getState().buyTicketForm.inputs;
+    let inputs = getState().buyTicketForm.inputs
 
     dispatch({type: "CREATE_NEW_TICKET_STARTED"})
     request.post(REMOTE_URL + "/data/ticket/new-ticket", inputs)
       .then((response) => {
         const transaction_data = {
-          "POSKey": "bb33c0ea62a24af8b1241ffa33f7bcf5",
+          "POSKey": BARIONKEY,
           "PaymentType": "Immediate",
           "GuestCheckOut": true,
           "FundingSources": ["All"],
           "PaymentRequestId": response.data._id,
           "Locale": "hu-HU",
           "OrderNumber": response.data._id,
-          "CallbackUrl": "https://mobiljeg.hu:7235/data/ticket/ticket-status",
-          "RedirectUrl": "https://mobiljeg.hu/jegyek/rendeles",
+          "CallbackUrl": BARION_CALLBACK_URL,
+          "RedirectUrl": BARION_RETURN_URL,
           "Currency": "HUF",
           "Transactions": [{
               "POSTransactionId": response.data._id,
@@ -88,7 +88,7 @@ export function barionPay(e){
         }
 
         dispatch({type: "CREATE_NEW_TICKET_SUCCESS"})
-        request.post("https://api.barion.com/v2/Payment/Start/", transaction_data, {withCredentials: false})
+        request.post(`https://${BARIONURL}/v2/Payment/Start/`, transaction_data, {withCredentials: false})
           .then((response) => {
             window.location.replace(response.data.GatewayUrl)
           })

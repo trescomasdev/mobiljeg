@@ -1,0 +1,14 @@
+#menu-header{
+  background: var(--main-color);
+  text-align: center;
+  height: 80px;
+  display: flex;
+  box-sizing: border-box;
+  color: white;
+}
+
+#menu-header .user-name{
+  box-sizing: border-box;
+  padding: 0 20px;
+  color: var(--main-inv-color);
+}

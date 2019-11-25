@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from "react-redux";
+import React from 'react'
+import { connect } from "react-redux"
 
-import barion from './barion.png';
-import Logo from '../../components/Logo/Logo';
+import barion from './barion.png'
+import { Logo } from '../../components'
 
-import './Footer.css';
+import './Footer.css'
 
-class Footer extends Component {
-
-  render() {
-    return(
-      <footer id="footer">
-        <div className="footer-content">
-          <Logo />
-          <span className="copyright">© Minden jog fenttartva.</span>
-          <img alt="barion" src={barion} className="barion-logo"/>
-        </div>
-      </footer>
-    );
-
-  }
+function Footer() {
+  return(
+    <footer id="footer">
+      <Logo />
+      <span className="copyright">© Minden jog fenttartva.</span>
+      <div className="barion-logo"><img alt="barion" src={barion}/></div>
+    </footer>
+  )
 }
 
 export default connect(state => ({
  ...state.user
-}))(Footer);
+}))(Footer)

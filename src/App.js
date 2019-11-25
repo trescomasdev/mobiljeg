@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
-import { Provider } from "react-redux";
+import React from 'react'
+import { Provider } from 'react-redux'
 
-import store from "./store";
-import Router from "./router";
+import store from "./store"
+import { SlideInProvider } from './contexts'
+import Router from "./router"
 
-class App extends Component {
-  render() {
-    return(
-      <Provider store={store}>
+function App() {
+
+  return(
+    <Provider store={store}>
+      <SlideInProvider>
         <Router />
-      </Provider>
-    );
-  }
+      </SlideInProvider>
+    </Provider>
+  )
+
 }
 
-export default App;
+export default App

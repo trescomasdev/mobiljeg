@@ -1,0 +1,21 @@
+#login-form .actions{
+  display: flex;
+}
+
+#login-form .actions > *{
+  flex: 1;
+}
+
+#login-form .forget-password{
+  margin-left: 20px;
+  color: var(--link-color)
+}
+
+#login-form .forget-password:hover{
+  cursor: pointer;
+  color: var(--link-hover-color);
+}
+
+#login-form .forget-password .fa{
+  margin-right: 5px;
+}

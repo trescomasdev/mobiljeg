@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import moment from 'moment';
-import {  Modal, Button } from 'react-bootstrap';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import moment from 'moment'
+import FontAwesome from 'react-fontawesome'
+import {  Modal } from 'react-bootstrap'
 
-import { getTickets, useTicket } from '../../actions/ticketActions';
+import { getTickets, useTicket } from '../../actions/ticketActions'
+import { LabeledInput, Button, SortableTable } from '../../components'
 
-import LabeledInput from "../../components/LabeledInput/LabeledInput";
-import SortableTable from "../../components/SortableTable/SortableTable";
-
-import './TicketList.css';
+import './TicketList.css'
 
 class TicketList extends Component {
   constructor(props){
@@ -27,7 +26,7 @@ class TicketList extends Component {
   }
 
   getStatus(val){
-    let status = "fizetésre vár";
+    let status = "fizetésre vár"
 
     if (val === "Succeeded")
       status = "érvényes"
@@ -67,7 +66,7 @@ class TicketList extends Component {
       {id: "_id", label: "Azonosító"},
       {id: "name", label: "Név"},
       {id: "email", label: "Email"},
-      {id: "phone", label: "Telefon"},
+      // {id: "phone", label: "Telefon"},
       {id: "qty", label: "Mennyiség", pattern: (val, row) => row['usedQty'] + "/" + val + " db"},
       {id: "summary", label: "Összeg", pattern: (val) => val + " HUF"},
       {id: "status", label: "Státusz", pattern: (val) =>  this.getStatus(val) },
@@ -78,7 +77,7 @@ class TicketList extends Component {
       {column: "_id", sortFunction: "CaseInsensitive"},
       {column: "name", sortFunction: "CaseInsensitive"},
       {column: "email", sortFunction: "CaseInsensitive"},
-      {column: "phone", sortFunction: "CaseInsensitive"},
+      // {column: "phone", sortFunction: "CaseInsensitive"},
       {column: "status", sortFunction: "CaseInsensitive"},
       {column: "createdAt", sortFunction: "Date"}
     ]
@@ -93,12 +92,11 @@ class TicketList extends Component {
         <div className="container">
 
           <div className="row block-title-holder">
-            <div className="col-md-12">
-              <h1 className="block-title">Jegyek</h1>
-            </div>
+            <h1 className="block-title">Jegyek</h1>
           </div>
 
           <div className="row ticket-list">
+            <Button type="main"><FontAwesome name="refresh" onClick={this.props.getTickets} />Frissítés</Button>            
             <SortableTable
               dataKeys={dataKeys}
               actions={actions}
@@ -132,23 +130,20 @@ class TicketList extends Component {
           </Modal.Footer>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-const mapStateToProps = state => ({ ...state.tickets});
+const mapStateToProps = state => ({ ...state.tickets})
 
 const mapDispatchToProps = dispatch => ({
   getTickets: () => {
-    dispatch(getTickets());
+    dispatch(getTickets())
   },
   useTicket: (e, data) => {
-    e.preventDefault();
-    dispatch(useTicket(data));
-  },
-  onRenewSession: e => {
-    // dispatch(renewSession(e.target, validation));
-  },
-});
+    e.preventDefault()
+    dispatch(useTicket(data))
+  }
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(TicketList);
+export default connect(mapStateToProps, mapDispatchToProps)(TicketList)

@@ -1,0 +1,32 @@
+.form-wrapper{
+  justify-content: center;
+  display: flex;
+}
+
+.form{
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  background: var(--alt-color);
+  box-sizing: border-box;
+}
+
+.form h1{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: var(--main-color)
+}
+
+.form h1 .fa{
+  margin-right: 5px;
+}
+
+
+@media screen and (max-width: 840px) {
+
+  .form{
+    padding: 0;
+  }
+
+}

@@ -1,13 +1,50 @@
-header#header{
-  height: 100px;
-  background-color: #0095e5;
+#header{
+  height: 80px;
+  background-color: var(--main-color);
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--ui-border);
 }
 
-header .header-content{
+#header .block{
+  flex: 1;
+}
+
+#header .block.user-nav,
+#header .block.nav{
+  display: flex;
+  align-items: center;
+}
+
+#header .block.user-nav{
+  justify-content: flex-end
+}
+
+#header .block .slide-in-button{
+  padding: 15px;
+  font-size: 28px;
+  color: var(--main-bg);
+}
+
+#header .block.nav .slide-in-button{
+  margin-left: 20px;
+}
+
+#header .block.user-nav .slide-in-button{
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+#header .block.brand{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-basis: 100%;
+}
+
+#header .block.brand img{
+  height: 60px;
+  width: auto;
 }

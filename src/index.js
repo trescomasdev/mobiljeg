@@ -1,14 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
 
-import './index.css';
-import './css/shadow.css';
-import './css/wyswig.css';
-import './css/responsive-table.css';
-import 'font-awesome/css/font-awesome.min.css';
+import './css/index.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'))
+registerServiceWorker()

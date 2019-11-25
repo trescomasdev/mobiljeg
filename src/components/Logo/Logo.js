@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import logo from './logo.png';
-import './Logo.css';
+import logo from './logo.png'
+import './Logo.css'
 
-class Logo extends Component {
+function Logo() {
 
-  render() {
-    return(
-      <div id="logo">
-        <div>
-          <img alt="logo" src={logo} />
-        </div>
+  return(
+    <div className="logo">
+      <Link to="/">
+        <div><img alt="logo" src={logo} /></div>
         <span>MOBIL<span>JÉG</span></span>
-      </div>
-    );
+      </Link>
+    </div>
+  )
 
-  }
 }
 
-export default Logo;
+export default Logo

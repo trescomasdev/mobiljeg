@@ -1,5 +1,5 @@
-import request from '../utils/request';
-import { REMOTE_URL } from '../config/app';
+import request from '../utils/request'
+import { REMOTE_URL } from '../config'
 
 export function getOptions(e){
   return function(dispatch, getState){

@@ -1,0 +1,25 @@
+:root{
+  --font-xxs: 12px;
+  --font-xs: 14px;
+  --font-s: 16px;
+  --font-m: 20px;
+  --font-l: 24px;
+  --font-xl: 28px;
+  --font-xxl: 32px;
+  --font-giant: 42px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  :root{
+    --font-xxs: 10px;
+    --font-xs: 12px;
+    --font-s: 14px;
+    --font-m: 18px;
+    --font-l: 20px;
+    --font-xl: 22px;
+    --font-xxl: 28px;
+    --font-giant: 36px;
+  }
+
+}

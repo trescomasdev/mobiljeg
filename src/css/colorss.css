@@ -1,0 +1,14 @@
+:root{
+  --main-inv-color: #FFF;
+  --main-dark-color: #333;
+  --alt-light-color: rgba(183, 183, 183, .4);
+  --alt-color: #f8f8f8;
+  --alt-dark-color: #d2d2d2;
+  --text-color: #333;
+  --link-color: #0095e5;
+  --link-hover-color: #666;
+  --valid-color: rgb(0, 208, 0);
+  --invalid-color: rgb(208, 87, 95);
+  --transistion-time: .2s;
+  --transistion-type: ease-in;
+}

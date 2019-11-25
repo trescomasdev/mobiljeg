@@ -8,11 +8,16 @@
 #buy-tickets .buy-tickets > div{
   flex-basis: calc(48% - 1px);
   margin: 1%;
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1023px) {
+    #buy-tickets .buy-tickets{
+      flex-flow: column-reverse;
+    }
+
     #buy-tickets .buy-tickets > div{
       flex-basis: calc(100% - 2px);
-      margin: 0;
+      margin: 0 0 40px;
     }
 }

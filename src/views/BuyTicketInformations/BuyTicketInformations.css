@@ -1,0 +1,22 @@
+#buy-ticket-informations{
+  padding: 40px;
+  background: var(--main-bg);
+  margin: 40px;
+}
+
+#buy-ticket-informations h1{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: var(--ui-text)
+}
+
+#buy-ticket-informations h1 .fa{
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 680px) {
+    #buy-ticket-informations {
+      padding: 20px;
+    }
+}

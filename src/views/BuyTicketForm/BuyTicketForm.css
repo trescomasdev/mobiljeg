@@ -1,0 +1,47 @@
+#buy-ticket-form{
+  padding: 40px;
+  background: var(--main-color);
+  margin: 40px;
+}
+
+#buy-ticket-form .button{
+  width: 100%;
+  padding: 15px;
+}
+
+#buy-ticket-form h1{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: var(--main-bg)
+}
+
+#buy-ticket-form h1 .fa{
+  margin-right: 5px;
+}
+
+#buy-ticket-form .buy-ticket-summary{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top: 3px solid var(ui-border);
+  padding: 10px 0 10px;
+  color: var(--main-text)
+}
+
+#buy-ticket-form .buy-ticket-summary span{
+  flex: 1;
+  text-transform: uppercase;
+}
+
+#buy-ticket-form .buy-ticket-summary span.amount{
+  text-align: right;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+@media screen and (max-width: 480px) {
+  #buy-ticket-form{
+      padding: 20px
+    }
+}

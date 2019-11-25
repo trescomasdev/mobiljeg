@@ -10,7 +10,7 @@
 }
 
 .labeled-input .error{
-  color: var(--main-inv-color);
+  color: var(--main-text);
   background: var(--invalid-color);
   padding: 5px;
   display: block
@@ -24,8 +24,8 @@
   border: none;
   padding: 15px;
   background: transparent;
-  border: 1px solid var(--alt-dark-color);
-  color: var(--main-color);
+  border: 1px solid var(--ui-border);
+  color: var(--ui-text);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }

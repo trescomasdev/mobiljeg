@@ -1,0 +1,7 @@
+export { default as LoginForm } from './LoginForm/LoginForm'
+export { default as RegistrationForm } from './RegistrationForm/RegistrationForm'
+export { default as BuyTicketForm } from './BuyTicketForm/BuyTicketForm'
+export { default as BuyTicketInformations } from './BuyTicketInformations/BuyTicketInformations'
+export { default as PaymentSuccess } from './PaymentSuccess/PaymentSuccess'
+export { default as LeftMenu } from './LeftMenu/LeftMenu'
+export { default as RightMenu } from './RightMenu/RightMenu'

@@ -1,0 +1,24 @@
+:root{
+  --main-color: #0095e5;
+  --main-bg: #fff;
+  --main-bg-dark: #1a202c;
+  --main-bg-helper: #f3f3f3;
+  --main-text: #fff;
+
+  --ui-color: #0095e5;
+  --ui-color-dark: #007bbd;
+  --ui-color-hvr: #333;
+  --ui-bg: #f7f7f7;
+  --ui-bg-helper: #e3e3e3;
+  --ui-bg-hvr: #e7e7e7;
+  --ui-text: #333;
+  --ui-placeholder: #8a8888;
+  --ui-placeholder-hvr: #999;
+  --ui-border: #e0e0e0;
+  --ui-border-hvr: #e4e4e4;
+
+  --valid-color: #44b344;
+  --invalid-color: orangered;
+  --warning-color: orange;
+
+}

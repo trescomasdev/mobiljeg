@@ -1,43 +1,53 @@
-footer#footer{
-  background-color: #0095e5;
+#footer{
+  background-color: var(--main-color);
+  margin-top: auto;
   padding: 20px;
-  display: inline-block;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
   width: 100%;
   text-align: center ;
   position: relative;
+  height: 60px;
 }
 
-footer#footer #logo{
+#footer > *{
+  flex: 1
+}
+
+#footer .logo{
   font-size: 24px;
 }
 
-footer#footer #logo img{
+#footer .logo img{
   width: 30px;
 }
 
-footer#footer .copyright{
-  float: right;
+#footer .copyright{
   line-height: 24px;
-  color: #efefef;
+  color: var(--alt-color);
   display: block ;
   width: 100%;
 }
 
-footer#footer .barion-logo{
-  position: absolute;
-  width: 280px;
-  right: 20px;
-  bottom: 20px;
+#footer .barion-logo{
+  justify-content: flex-end;
+  text-align: right;
 }
 
-@media screen and (max-width: 480px) {
+#footer .barion-logo img{
+  height: 30px;
+}
 
-  footer#footer .barion-logo{
-    position: relative;
-    width: 280px;
-    margin-top: 10px;
-    right: initial ;
-    bottom: initial ;
+@media screen and (max-width: 840px) {
+
+  #footer{
+    height: auto;
+    flex-direction: column;
+  }
+
+  #footer > *{
+    margin: 5px 0;
   }
 
 }

@@ -1,34 +1,27 @@
-import React, { Component } from 'react';
-import { connect } from "react-redux";
+import React from 'react'
+import FontAwesome from 'react-fontawesome'
 
-import { logout } from '../../actions/userActions';
+import { Logo, SlideInButton} from '../../components'
 
-import Logo from '../../components/Logo/Logo';
-import Menu from '../../components/Menu/Menu';
+import './Header.css'
 
-import './Header.css';
+export default function Header(){
 
-class Header extends Component {
-
-  render() {
-    return(
-      <header id="header">
-        <Menu {...this.props}/>
-        <div className="header-content">
-          <Logo />
-        </div>
-      </header>
-    );
-
-  }
+  return(
+    <header id="header">
+      <div className="block nav">
+        <SlideInButton id="left">
+          <FontAwesome name="bars"/>
+        </SlideInButton>
+      </div>
+      <div className="block brand">
+        <Logo />
+      </div>
+      <div className="block user-nav">
+        <SlideInButton id="right">
+          <FontAwesome name="user"/>
+        </SlideInButton>
+      </div>
+    </header>
+  )
 }
-
-const mapStateToProps = state => ({ ...state.user});
-
-const mapDispatchToProps = dispatch => ({
-  logout: () => {
-    dispatch(logout());
-  }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);

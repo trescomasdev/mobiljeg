@@ -7,10 +7,28 @@
     text-decoration: none;
 }
 
+.wyswig p{
+  margin: 10px 0;
+}
+
 .wyswig h2{
   font-size: 20px;
   font-weight: bold;
   margin-top: 30px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--alt-dark-color)
+}
+
+.wyswig ul{
+  list-style: circle;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 480px) {
+
+  .wyswig h2{
+    font-size: 16px;
+  }
+
 }

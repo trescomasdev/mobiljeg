@@ -1,4 +1,3 @@
-// import { REMOTE_URL } from '../../config/app';
 import { barionPay } from "../ticketActions";
 import validateInput from '../../utils/validateInput';
 import { isEmptyObject } from '../../utils/validations';
@@ -21,7 +20,7 @@ export function changeInput(e, validation){
 
 export function updateFromUser(e){
   return function(dispatch, getState){
-      let user = getState().user.user;
+      let user = getState().user.user || {}
 
       dispatch({type: actionPrefix + "INPUT_CHANGE", payload: {name: "name", value: user.name || ""}})
       dispatch({type: actionPrefix + "INPUT_CHANGE", payload: {name: "email", value: user.email || ""}})

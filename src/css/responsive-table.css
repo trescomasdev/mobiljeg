@@ -15,9 +15,6 @@ thead tr{
 }
 
 tr {
-  border: 1px solid #dfdfdf;
-  border-bottom: 2px solid #dfdfdf;;
-  margin-bottom: 10px;
   display: block;
 }
 
