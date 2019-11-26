@@ -37,8 +37,8 @@ export default function validateInput(value, validation, active = false, inputs 
     }
   }
 
-  if (error === "")
-    error = false
+  if (error === "") error = false
+  if (validation.type === "email") value = value.toLowerCase()
 
   return {error: error, value: value};
 }

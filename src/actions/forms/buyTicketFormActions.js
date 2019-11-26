@@ -11,8 +11,7 @@ export function changeInput(e, validation){
 
       dispatch({type: actionPrefix + "INPUT_CHANGE", payload: {name: e.name, value: validatedInput.value}})
 
-      if (e.name === "qty")
-        dispatch({type: actionPrefix + "INPUT_CHANGE", payload: {name: "summary", value: validatedInput.value * 700}})
+      if (e.name === "qty") dispatch({type: actionPrefix + "INPUT_CHANGE", payload: {name: "summary", value: validatedInput.value * 700}})
 
       dispatch(validate(validation, e.name))
   }
