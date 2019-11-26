@@ -18,3 +18,16 @@
   text-align: center;
   border-bottom: 1px solid var(--alt-light-color)
 }
+
+#ticket-list .ticket-status{
+  color: var(--warning-color)
+}
+
+#ticket-list .ticket-status.Succeeded{
+  color: var(--valid-color)
+}
+
+#ticket-list .ticket-status.used,
+#ticket-list .ticket-status.Expire{
+  color: var(--invalid-color)
+}

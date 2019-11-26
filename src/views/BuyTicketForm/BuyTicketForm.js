@@ -30,6 +30,8 @@ const validation = {
 function BuyTicketForm({user, inputs, error, onChangeInput, validated, onSubmitForm, updateFromUser}) {
   useEffect(() => {
     updateFromUser()
+    validate()
+    // eslint-disable-next-line
   }, [user.isAuthenticated])
 
   return(
@@ -38,13 +40,12 @@ function BuyTicketForm({user, inputs, error, onChangeInput, validated, onSubmitF
         <h1><FontAwesome name='ticket' />Jegyvásárlás</h1>
         <LabeledInput name="name" type="text" placeholder="Név" value={inputs.name} invertColor error={error} onChange={onChangeInput}/>
         <LabeledInput name="email" type="email" placeholder="Email" value={inputs.email} invertColor error={error} onChange={onChangeInput}/>
-        {/*<LabeledInput name="phone" type="tel" placeholder="Telefonszám" value={inputs.phone} invertColor error={error} onChange={onChangeInput}/>*/}
         <LabeledInput name="qty" type="text" placeholder="Mennyiség" value={inputs.qty} pattern="[0-9]*" invertColor error={error} onChange={onChangeInput}/>
         <div className="buy-ticket-summary">
           <span>Összesen</span>
           <span className="amount">{inputs.summary} Ft</span>
         </div>
-        <Button disabled={!validated} onClick={onSubmitForm}>Vásárlás</Button>
+        <Button onClick={onSubmitForm}>Vásárlás</Button>
       </form>
     </div>
   )
@@ -63,6 +64,9 @@ const mapDispatchToProps = dispatch => ({
     e.preventDefault()
     dispatch(validate(validation))
     dispatch(submit())
+  },
+  validate: e => {
+    dispatch(validate(validation))
   }
 })
 

@@ -1,0 +1,16 @@
+.use-ticket-box{
+  position: relative;
+}
+
+.use-ticket-box-modal{
+  position: absolute;
+  top: 0;
+  background: var(--ui-bg);
+  z-index: 2000;
+  padding: 20px;
+  border: 1px solid var(--ui-border);
+  box-sizing: border-box;
+  left: 0;
+  transform: translateX(calc(-100% + -5px));
+
+}

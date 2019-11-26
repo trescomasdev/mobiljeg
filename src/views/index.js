@@ -5,3 +5,4 @@ export { default as BuyTicketInformations } from './BuyTicketInformations/BuyTic
 export { default as PaymentSuccess } from './PaymentSuccess/PaymentSuccess'
 export { default as LeftMenu } from './LeftMenu/LeftMenu'
 export { default as RightMenu } from './RightMenu/RightMenu'
+export { default as UseTicketBox } from './UseTicketBox/UseTicketBox'

@@ -42,13 +42,9 @@ export default class Orders extends Component {
           );
       })
 
-      if (this.props.actions && this.props.actions.length > 0){
-        let actions = this.props.actions.map((d, key) => {
-          return <span key={key} onClick={() => d.clickAction(row)}>{d.action}</span>
-        })
-
+      if (this.props.actions){
         rowData.push(
-          <Td key={this.props.dataKeys.length + 1} column="actions"><div className="action-buttons">{actions}</div></Td>
+          <Td key={this.props.dataKeys.length + 1} column="actions"><div className="action-buttons">{this.props.actions(row)}</div></Td>
         )
       }
 

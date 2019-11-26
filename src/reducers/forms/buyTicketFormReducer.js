@@ -7,8 +7,8 @@ const initialState = {
     name: "",
     email: "",
     phone: "",
-    qty: "0",
-    summary: 0
+    qty: 1,
+    summary: 700
 
   },
   validated: false,

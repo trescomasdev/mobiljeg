@@ -12,6 +12,7 @@ function Checkout({ticket, payment, location, checkStatus: _checkStatus}) {
 
   useEffect(() => {
     _checkStatus(paymentId)
+    // eslint-disable-next-line    
   }, [paymentId])
 
   return (

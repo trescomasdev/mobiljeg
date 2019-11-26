@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Switch, Redirect, Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
+import { ToastContainer } from 'react-toastify'
 import { connect } from 'react-redux'
 
 import history from './history'
@@ -14,6 +15,7 @@ function Router({isAuthenticated, role, dispatch}) {
 
   useEffect(() => {
     dispatch(authenticate())
+    // eslint-disable-next-line
   }, [])
 
   return(
@@ -42,6 +44,7 @@ function Router({isAuthenticated, role, dispatch}) {
                 </Switch>
                 <Route component={Footer} />
               </div>
+              <ToastContainer />
             </div>
           </Wrapper>
         </ScrollToTop>
