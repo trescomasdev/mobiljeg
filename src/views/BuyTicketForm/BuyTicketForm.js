@@ -27,10 +27,10 @@ const validation = {
   }
 }
 
-function BuyTicketForm({inputs, error, onChangeInput, validated, onSubmitForm, updateFromUser}) {
+function BuyTicketForm({user, inputs, error, onChangeInput, validated, onSubmitForm, updateFromUser}) {
   useEffect(() => {
     updateFromUser()
-  }, [])
+  }, [user.isAuthenticated])
 
   return(
     <div id="buy-ticket-form" className="shadow-6">
@@ -50,7 +50,7 @@ function BuyTicketForm({inputs, error, onChangeInput, validated, onSubmitForm, u
   )
 }
 
-const mapStateToProps = state => ({ ...state.buyTicketForm })
+const mapStateToProps = state => ({ user: state.user, ...state.buyTicketForm })
 
 const mapDispatchToProps = dispatch => ({
   updateFromUser: () => {

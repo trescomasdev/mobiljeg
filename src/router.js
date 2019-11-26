@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { Switch, Redirect, Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
 import { connect } from 'react-redux'
@@ -7,48 +7,47 @@ import history from './history'
 import {authenticate} from './actions/userActions'
 import { Login, SignUp, Header, Footer, Profil, Checkout, BuyTicket, TicketList, Options, License, Privacy, Barion } from './containers/'
 
-import { Wrapper, PrivateRoute as PrivateRoute2, ScrollToTop} from './components'
+import { Wrapper, PrivateRoute, ScrollToTop} from './components'
 import { LeftMenu, RightMenu } from './views'
-import PrivateRoute from './components/PrivateRoute'
 
-class Router extends Component {
-  componentWillMount(){
-      this.props.dispatch(authenticate())
-  }
+function Router({isAuthenticated, role, dispatch}) {
 
-  render() {
-    return(
-      <ConnectedRouter history={history}>
-        <Route render={({location}) =>
-          <ScrollToTop>
-            <Wrapper>
-              <div id="app">
-                <LeftMenu key={`${location.key}-left`} {...this.props}/>
-                <RightMenu key={`${location.key}-right`} {...this.props}/>
-                <div id="wrapper">
-                  <Route render={(props) => <Header {...props}/>} />
-                  <Switch>
-                    <Route exact path="/" render={(props) => <BuyTicket {...props}/>} />
-                    <Route exact path="/vasarlasi-feltetelek" render={(props) => <License {...props}/>} />
-                    <Route exact path="/adatvedelmi-nyilatkozat" render={(props) => <Privacy {...props}/>} />
-                    <Route exact path="/barion-informaciok" render={(props) => <Barion {...props}/>} />
-                    <PrivateRoute  path="/jegyek" requiredRole="admin" render={(props) => <TicketList {...props}/>} />
-                    <PrivateRoute  path="/beallitasok" requiredRole="admin" render={(props) => <Options {...props}/>} />
-                    <PrivateRoute  path="/profil" render={(props) => <Profil {...props}/>} />
-                    <Route path="/rendeles" render={(props) => <Checkout {...props}/>} />
-                    <PrivateRoute2 exact path="/bejelentkezes" component={Login} condition={this.props.isAuthenticated} />
-                    <PrivateRoute2 exact path="/regisztracio" component={SignUp} condition={this.props.isAuthenticated} />
-                    <Redirect to="/" />
-                  </Switch>
-                  <Route render={(props) => <Footer {...props}/>}/>
-                </div>
+  useEffect(() => {
+    dispatch(authenticate())
+  }, [])
+
+  return(
+    <ConnectedRouter history={history}>
+      <Route render={({location}) =>
+        <ScrollToTop>
+          <Wrapper>
+            <div id="app">
+              <LeftMenu key={`${location.key}-left`} />
+              <RightMenu key={`${location.key}-right`} />
+              <div id="wrapper">
+                <Route component={Header} />
+                <Switch>
+                  <Route exact path="/" component={BuyTicket} />
+                  <Route exact path="/jegyvasarlas" component={BuyTicket} />
+                  <PrivateRoute exact path="/regisztracio" component={SignUp} condition={isAuthenticated} />
+                  <PrivateRoute exact path="/bejelentkezes" component={Login} condition={isAuthenticated} />
+                  <PrivateRoute exact path="/profil" component={Profil} condition={!isAuthenticated} />
+                  <PrivateRoute exact path="/jegyek" component={TicketList} condition={!isAuthenticated || role !== "admin"} />
+                  <Route exact path="/vasarlasi-feltetelek"component={License} />
+                  <Route exact path="/adatvedelmi-nyilatkozat" component={Privacy} />
+                  <Route exact path="/barion-informaciok" component={Barion} />
+                  <PrivateRoute  path="/beallitasok" component={Options} condition={!isAuthenticated || role !== "admin"} />
+                  <Route path="/rendeles" component={Checkout} />
+                  <Redirect to="/" />
+                </Switch>
+                <Route component={Footer} />
               </div>
-            </Wrapper>
-          </ScrollToTop>
-        }/>
-      </ConnectedRouter>
-    )
-  }
+            </div>
+          </Wrapper>
+        </ScrollToTop>
+      }/>
+    </ConnectedRouter>
+  )
 }
 
 export default connect(state => ({

@@ -1,14 +1,25 @@
 #menu-header{
   background: var(--main-color);
-  text-align: center;
   height: 80px;
   display: flex;
   box-sizing: border-box;
   color: white;
+  align-items: center;
 }
 
 #menu-header .user-name{
   box-sizing: border-box;
+  flex: 1;
   padding: 0 20px;
   color: var(--main-inv-color);
+}
+
+#menu-header .user-name .user-email{
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-header .user-name .user-email .greetings{
+  font-size: var(--font-xs);
+  color: #b9b9b9;
 }

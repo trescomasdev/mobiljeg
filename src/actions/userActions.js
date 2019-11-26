@@ -5,7 +5,7 @@ export function authenticate(){
   return function(dispatch, getState){
     request.get(REMOTE_URL + "/data/auth/authenticate")
       .then((response) => {
-        dispatch({type: "AUTHENTICATE_SUCCESS", payload: response.data})      
+        dispatch({type: "AUTHENTICATE_SUCCESS", payload: response.data})
       })
       .catch((err) => {
         dispatch({type: "AUTHENTICATE_FAILED", payload: err})
@@ -24,10 +24,11 @@ export function register(data, success = false, failed = false){
         dispatch({type: "REGISTRATION_SUCCESS", payload: response.data})
       })
       .catch((err) => {
+        console.log("err", err);
         if (failed !== false)
-          dispatch({type: failed, payload: err.response})
+          dispatch({type: failed, payload: err})
 
-        dispatch({type: "REGISTRATION_FAILED", payload: err.response.data})
+        dispatch({type: "REGISTRATION_FAILED", payload: err})
     })
   }
 }
@@ -42,10 +43,11 @@ export function login(data, success = false, failed = false){
         dispatch({type: "LOGIN_SUCCESS", payload: response.data})
       })
       .catch((err) => {
+        console.log("err", err);
         if (failed !== false)
-          dispatch({type: failed, payload: err.response.data})
+          dispatch({type: failed, payload: err})
 
-        dispatch({type: "LOGIN_FAILED", payload: err.response.data})
+        dispatch({type: "LOGIN_FAILED", payload: err})
     })
   }
 }

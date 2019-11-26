@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { connect } from "react-redux"
+import { connect } from 'react-redux'
 
 import { logout } from '../../actions/userActions'
 
@@ -16,7 +16,7 @@ function RightMenu({user, logout, isAuthenticated, role}) {
     closeMenu()
     logout()
   }
-
+  
   return(
     <SlideIn id="right" side="right" translate="wrapper">
       {user && user.email &&
@@ -24,7 +24,7 @@ function RightMenu({user, logout, isAuthenticated, role}) {
           <div className="user-name">
             <div className="user-email">
               <span className="greetings">Hello,</span>
-              <b>{user.email}</b>
+              <b>{user.name}</b>
             </div>
           </div>
         </div>

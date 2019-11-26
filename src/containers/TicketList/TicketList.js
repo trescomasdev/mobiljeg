@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import FontAwesome from 'react-fontawesome'
-import {  Modal } from 'react-bootstrap'
 
 import { getTickets, useTicket } from '../../actions/ticketActions'
 import { LabeledInput, Button, SortableTable } from '../../components'
@@ -62,11 +60,9 @@ class TicketList extends Component {
   render() {
 
     const dataKeys = [
-      // {id: "createdAt", label: "Time", pattern: (val) => moment(val).format('M/D HH:mm:ss')},
       {id: "_id", label: "Azonosító"},
       {id: "name", label: "Név"},
       {id: "email", label: "Email"},
-      // {id: "phone", label: "Telefon"},
       {id: "qty", label: "Mennyiség", pattern: (val, row) => row['usedQty'] + "/" + val + " db"},
       {id: "summary", label: "Összeg", pattern: (val) => val + " HUF"},
       {id: "status", label: "Státusz", pattern: (val) =>  this.getStatus(val) },
@@ -88,15 +84,11 @@ class TicketList extends Component {
 
     return (
       <div id="ticket-list" className="section">
-
         <div className="container">
-
           <div className="row block-title-holder">
             <h1 className="block-title">Jegyek</h1>
           </div>
-
           <div className="row ticket-list">
-            <Button type="main"><FontAwesome name="refresh" onClick={this.props.getTickets} />Frissítés</Button>            
             <SortableTable
               dataKeys={dataKeys}
               actions={actions}
@@ -112,23 +104,16 @@ class TicketList extends Component {
               noDataText="No matching records found."
             />
           </div>
-
         </div>
-
-        <Modal show={this.state.modalOpen} onHide={this.toggleModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Jegy felhasználása</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+        {this.state.modalOpen &&
+          <div>
             <LabeledInput type="number" name="qty" value={this.state.changeQty} placeholder="Mennyiség" onChange={this.changeQty}/>
-          </Modal.Body>
-          <Modal.Footer>
             <Button type="submit" className="use-ticket" onClick={this.useTicket}>
               Érvényesít
             </Button>
             <Button className="close-modal" onClick={this.toggleModal}>Bezár</Button>
-          </Modal.Footer>
-        </Modal>
+          </div>
+        }
       </div>
     )
   }

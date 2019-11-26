@@ -7,6 +7,9 @@ import { validate, changeInput, submit } from '../../actions/forms/registerFormA
 import { LabeledInput } from '../../components'
 
 const validation = {
+  name: {
+    required: true
+  },
   email: {
     required: true,
     type: "email"
@@ -25,6 +28,7 @@ function RegistrationForm({inputs, error, onChangeInput, validated, onSubmitForm
     <div className="form-wrapper">
       <div id="registration-form" className="form">
         <h1><FontAwesome name='user-plus' />Regisztráció</h1>
+        <LabeledInput name="name" type="text" placeholder="Name" value={inputs.name} error={error} onChange={onChangeInput}/>
         <LabeledInput name="email" type="text" placeholder="Email" value={inputs.email} error={error} onChange={onChangeInput}/>
         <LabeledInput name="password" type="password" placeholder="Jelszó" value={inputs.password} error={error} onChange={onChangeInput}/>
         <LabeledInput name="password2" type="password" placeholder="Jelszó mégegyszer" value={inputs.password2} error={error} onChange={onChangeInput}/>
