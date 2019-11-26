@@ -4,6 +4,7 @@
   display: block;
   top: 0;
   width: 320px;
+  background: var(--main-bg);
   z-index: 100;
   overflow: hidden;
   -moz-transition:all 200ms ease-in;
@@ -40,26 +41,17 @@
 }
 
 .slide-in-translate{
-  -moz-transition:all 200ms ease-in;
-  -webkit-transition:all 200ms ease-in;
-  -o-transition:all 200ms ease-in;
   transition:all 200ms ease-in;
 }
 
 .slide-in-left-translate{
-  -webkit-transform:translate3d(320px, 0, 0);
-  -moz-transform:translate3d(320px, 0, 0);
-  -o-transform:translate3d(320px, 0, 0);
-  transform:translate3d(320px, 0, 0);
+  transform:translate3d(320px, 0, 0) !important;
   pointer-events: none;
 }
 
 .slide-in-right-translate{
   pointer-events: none;
-  -webkit-transform:translate3d(-320px, 0, 0);
-  -moz-transform:translate3d(-320px, 0, 0);
-  -o-transform:translate3d(-320px, 0, 0);
-  transform:translate3d(-320px, 0, 0);
+  transform:translate3d(-320px, 0, 0) !important;
 }
 
 .slide-in-button{

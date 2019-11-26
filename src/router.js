@@ -22,8 +22,8 @@ function Router({isAuthenticated, role, dispatch}) {
     <ConnectedRouter history={history}>
       <Route render={({location}) =>
         <ScrollToTop>
+          <AlertBar />
           <Wrapper>
-            <AlertBar />
             <div id="app">
               <LeftMenu key={`${location.key}-left`} />
               <RightMenu key={`${location.key}-right`} />

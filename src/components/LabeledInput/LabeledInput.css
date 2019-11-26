@@ -21,13 +21,13 @@
   display: block;
   width: 100%;
   margin: 0;
-  border: none;
   padding: 15px;
-  background: transparent;
-  border: 1px solid var(--ui-border);
+  background: var(--ui-bg);
   color: var(--ui-text);
+  border: 1px solid var(--ui-border);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  outline: none;
 }
 
 .labeled-input label.valid input{
@@ -148,5 +148,5 @@
 }
 
 .labeled-input label.invertColor input + span {
-  color: var(--alt-dark-color);
+  color: var(--main-color);
 }

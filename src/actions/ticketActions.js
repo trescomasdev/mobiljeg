@@ -3,10 +3,10 @@ import { toast } from 'react-toastify'
 import request from '../utils/request'
 import { REMOTE_URL, BARIONKEY, BARIONURL, BARION_CALLBACK_URL, BARION_RETURN_URL } from '../config'
 
-export function getTickets(e){
+export function getTickets(query = undefined){
   return function(dispatch, getState){
       dispatch({type: "FETCHING_TICKETS_STARTED"})
-      request.get(REMOTE_URL + "/data/ticket/all")
+      request.get(`${REMOTE_URL}/data/ticket/all${query ? `?query=${query}` : ""}`)
         .then((response) => {
           dispatch({type: "FETCHING_TICKETS_SUCCESS", payload: response.data})
         })

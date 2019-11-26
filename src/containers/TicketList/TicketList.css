@@ -31,3 +31,12 @@
 #ticket-list .ticket-status.Expire{
   color: var(--invalid-color)
 }
+
+#ticket-list .actions{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#ticket-list .actions > *{
+  margin-right: 10px;
+}

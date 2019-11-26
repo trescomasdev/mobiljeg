@@ -9,7 +9,7 @@
   font-size: var(--font-s);
   padding: 10px;
   color: var(--main-text);
-  transition: all 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   overflow:hidden;
   transform: translateY(0);
 }

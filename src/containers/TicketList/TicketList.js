@@ -3,14 +3,14 @@ import { connect } from 'react-redux'
 import moment from 'moment'
 
 import { getTickets } from '../../actions'
-import { SortableTable } from '../../components'
+import { SortableTable, Button } from '../../components'
 import { UseTicketBox } from '../../views'
 
 import './TicketList.css'
 
 function TicketList({getTickets, tickets}) {
   useEffect(() => {
-    getTickets()
+    getTickets("today")
   }, [getTickets])
 
   const getStatus = (val) => {
@@ -42,12 +42,18 @@ function TicketList({getTickets, tickets}) {
   ]
 
   let _actions = (row) => <UseTicketBox ticket={row} />
-
+console.log("tickets", tickets);
   return (
     <div id="ticket-list" className="section">
       <div className="container">
         <div className="row block-title-holder">
           <h1 className="block-title">Jegyek</h1>
+        </div>
+        <div className="actions">
+          <Button type="main" onClick={() => getTickets("today")}>Ma</Button>
+          <Button onClick={() => getTickets("week")}>Hét</Button>
+          <Button onClick={() => getTickets("month")}>Hónap</Button>
+          <Button onClick={() => getTickets()}>Összes</Button>
         </div>
         <div className="row ticket-list">
           <SortableTable
@@ -72,8 +78,8 @@ function TicketList({getTickets, tickets}) {
 const mapStateToProps = state => ({ ...state.tickets})
 
 const mapDispatchToProps = dispatch => ({
-  getTickets: () => {
-    dispatch(getTickets())
+  getTickets: (query) => {
+    dispatch(getTickets(query))
   }
 })
 

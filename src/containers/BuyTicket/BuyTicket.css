@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+#buy-tickets .buy-tickets .labeled-input{
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 1023px) {
     #buy-tickets .buy-tickets{
       flex-flow: column-reverse;

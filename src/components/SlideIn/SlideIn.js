@@ -29,13 +29,20 @@ export default function SlideInMenu({id, translate, side = "left", children}) {
 
   useEffect(() => {
     let translatedElement = document.getElementById(translate)
+    let alertBar = document.getElementById("alert-bar")
+
     if (!translatedElement) return
 
     let className = `slide-in-${side}-translate`
+    if (alertBar) alertBar.classList.add("slide-in-translate")
     translatedElement.classList.add("slide-in-translate")
 
-    if (isOpened(id)) return translatedElement.classList.add(className)
+    if (isOpened(id)) {
+      if (alertBar) alertBar.classList.add(className)
+      return translatedElement.classList.add(className)
+    }
 
+    if (alertBar) alertBar.classList.remove(className)
     return translatedElement.classList.remove(className)
   })
 
