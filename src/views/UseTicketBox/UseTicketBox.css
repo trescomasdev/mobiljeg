@@ -3,6 +3,7 @@
 }
 
 .use-ticket-box-modal{
+  width: 280px;
   position: absolute;
   top: 0;
   background: var(--ui-bg);
@@ -12,5 +13,21 @@
   box-sizing: border-box;
   left: 0;
   transform: translateX(calc(-100% + -5px));
+}
 
+.use-ticket-box-modal .actions{
+  display: flex;
+}
+
+.use-ticket-box-modal .actions > *{
+  flex: 1;
+  margin: 0 5px;
+}
+
+.use-ticket-box-modal .actions > *:first-child{
+  margin-left: 0
+}
+
+.use-ticket-box-modal .actions > *:last-child{
+  margin-right: 0
 }

@@ -63,17 +63,9 @@ td:last-child {
 		margin-bottom: 0;
 	}
 
-	tr:nth-child(even) {
-		background: #efefef;
-	}
-
 	td:before {
 		content: "";
 		display: none;
-	}
-
-	.responsive-table tr:nth-child(even) td{
-	  background: #efefef;
 	}
 
 	td{

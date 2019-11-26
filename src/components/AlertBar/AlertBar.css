@@ -1,0 +1,76 @@
+.alert-bar{
+  background: var(--main-bg-dark);
+  overflow: hidden;
+  border-bottom: 5px solid var(--main-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: var(--font-s);
+  padding: 10px;
+  color: var(--main-text);
+  transition: all 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  overflow:hidden;
+  transform: translateY(0);
+}
+
+.alert-bar .icon .fa{
+  font-size: var(--font-xl);
+  margin-right: 10px;
+}
+
+.alert-bar.error .title,
+.alert-bar.error .icon .fa{
+  color: var(--invalid-color)
+}
+
+.alert-bar.warning .title,
+.alert-bar.warning .icon .fa{
+  color: var(--warning-color)
+}
+
+.alert-bar.success .title,
+.alert-bar.success .icon .fa{
+  color: var(--valid-color)
+}
+
+.alert-bar.error{
+  border-color: var(--invalid-color)
+}
+
+.alert-bar.warning{
+  border-color: var(--warning-color)
+}
+
+.alert-bar.success{
+  border-color: var(--valid-color)
+}
+
+.alert-bar .title{
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.alert-bar .fa{
+  margin-right: 5px;
+}
+
+.alert-bar a{
+  color: var(--main-color)
+}
+
+.alert-bar ~ #app{
+  animation: bar-slide 1s;
+  background: var(--main-bg);
+}
+
+@keyframes bar-slide {
+  0% {
+    transform: translateY(-70px);
+  }
+
+  90% {
+    transform: translateY(0px);
+  }
+}

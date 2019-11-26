@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { validate, changeInput, submit } from '../../actions/forms/registerFormActions'
 
-import { LabeledInput } from '../../components'
+import { LabeledInput, Button } from '../../components'
 
 const validation = {
   name: {
@@ -24,6 +24,7 @@ const validation = {
 }
 
 function RegistrationForm({inputs, error, onChangeInput, validated, onSubmitForm}) {
+
   return(
     <div className="form-wrapper">
       <div id="registration-form" className="form">
@@ -32,7 +33,7 @@ function RegistrationForm({inputs, error, onChangeInput, validated, onSubmitForm
         <LabeledInput name="email" type="text" placeholder="Email" value={inputs.email} error={error} onChange={onChangeInput}/>
         <LabeledInput name="password" type="password" placeholder="Jelszó" value={inputs.password} error={error} onChange={onChangeInput}/>
         <LabeledInput name="password2" type="password" placeholder="Jelszó mégegyszer" value={inputs.password2} error={error} onChange={onChangeInput}/>
-        <input type="submit" className="btn btn-fullwidth" value="Regisztráció" disabled={!validated} onClick={onSubmitForm}/>
+        <Button type="main" className="full" disabled={!validated} onClick={onSubmitForm}>Regisztráció</Button>
       </div>
     </div>
   )

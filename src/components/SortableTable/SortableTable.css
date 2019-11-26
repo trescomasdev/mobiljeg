@@ -26,9 +26,8 @@
 
 .sortable-table .reactable-data tr:nth-child(even):hover td,
 .sortable-table .reactable-data tr:nth-child(odd):hover td{
-  background: var(--main-color);
+  background: var(--ui-bg-helper);
   cursor: pointer;
-  color: white
 }
 
 .reactable-next-page,

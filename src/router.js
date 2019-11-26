@@ -8,7 +8,7 @@ import history from './history'
 import {authenticate} from './actions/userActions'
 import { Login, SignUp, Header, Footer, Profil, Checkout, BuyTicket, TicketList, Options, License, Privacy, Barion } from './containers/'
 
-import { Wrapper, PrivateRoute, ScrollToTop} from './components'
+import { Wrapper, PrivateRoute, ScrollToTop, AlertBar } from './components'
 import { LeftMenu, RightMenu } from './views'
 
 function Router({isAuthenticated, role, dispatch}) {
@@ -23,6 +23,7 @@ function Router({isAuthenticated, role, dispatch}) {
       <Route render={({location}) =>
         <ScrollToTop>
           <Wrapper>
+            <AlertBar />
             <div id="app">
               <LeftMenu key={`${location.key}-left`} />
               <RightMenu key={`${location.key}-right`} />

@@ -9,7 +9,6 @@
   color: var(--ui-text);
   cursor: pointer;
   margin: 0;
-  border-radius: 5px;
   outline: none;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
@@ -54,6 +53,7 @@
 
 .button.full{
   width: 100%;
+  padding: 12px;
   box-sizing: border-box;
 }
 
