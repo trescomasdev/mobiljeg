@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import FontAwesome from 'react-fontawesome'
 
 import { getTodaySales, getTicketsByCustomer } from '../../actions'
 import { SortableTable, Button, LabeledInput } from '../../components'
@@ -8,7 +9,7 @@ import { UseTicketBox } from '../../views'
 
 import './TicketList.css'
 
-function TicketList({getTodaySales, getTicketsByCustomer, tickets}) {
+function TicketList({getTodaySales, getTicketsByCustomer, tickets = []}) {
 
   const [search, setSearch] = useState("")
 
@@ -46,6 +47,10 @@ function TicketList({getTodaySales, getTicketsByCustomer, tickets}) {
   ]
 
   let _actions = (row) => <UseTicketBox ticket={row} />
+  let sums = tickets.reduce((current, next) => {
+    current.ticketsNumber += next.qty
+    return current
+  }, {ticketsNumber: 0})
 
   return (
     <div id="ticket-list" className="section">
@@ -53,8 +58,16 @@ function TicketList({getTodaySales, getTicketsByCustomer, tickets}) {
         <div className="row block-title-holder">
           <h1 className="block-title">Jegyek</h1>
         </div>
-        <div className="actions">
-          <Button type="main" onClick={() => getTodaySales()}>Ma felnasznált jegyek</Button>
+        <div className="ticket-table-actionbar">
+          {sums && sums.ticketsNumber > 0 &&
+            <div className="sums">
+              <FontAwesome name="ticket" />
+              <span>{sums.ticketsNumber}</span>
+            </div>
+          }
+          <div className="actions">
+            <Button type="main" onClick={() => getTodaySales()}>Ma felnasznált jegyek</Button>
+          </div>
         </div>
         <LabeledInput name="search" placeholder="Keresés vagy név alapján" value={search} onChange={(e) => liveSearch(e.target.value)} />
         <div className="row ticket-list">

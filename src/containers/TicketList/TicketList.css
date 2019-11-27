@@ -35,8 +35,24 @@
 #ticket-list .actions{
   display: flex;
   justify-content: flex-end;
+  margin-left: auto;
 }
 
 #ticket-list .actions > *{
+  margin-right: 10px;
+}
+
+#ticket-list .ticket-table-actionbar{
+  display: flex;
+  align-items: center;
+}
+
+#ticket-list .ticket-table-actionbar .sums{
+  font-size: var(--font-xxl);
+  margin-right: 20px;
+}
+
+#ticket-list .ticket-table-actionbar .sums .fa{
+  color: var(--main-color);
   margin-right: 10px;
 }
