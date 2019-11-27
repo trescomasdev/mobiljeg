@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 
-import { getTickets } from '../../actions'
-import { SortableTable, Button } from '../../components'
+import { getTodaySales, getTicketsByCustomer } from '../../actions'
+import { SortableTable, Button, LabeledInput } from '../../components'
 import { UseTicketBox } from '../../views'
 
 import './TicketList.css'
 
-function TicketList({getTickets, tickets}) {
-  useEffect(() => {
-    getTickets("today")
-  }, [getTickets])
+function TicketList({getTodaySales, getTicketsByCustomer, tickets}) {
+
+  const [search, setSearch] = useState("")
+
+  const liveSearch = (str) => {
+    setSearch(str)
+    getTicketsByCustomer(str)
+  }
 
   const getStatus = (val) => {
     let status = "fizetésre vár"
@@ -27,7 +31,7 @@ function TicketList({getTickets, tickets}) {
     {id: "_id", label: "Azonosító"},
     {id: "name", label: "Név"},
     {id: "email", label: "Email"},
-    {id: "qty", label: "Mennyiség", pattern: (val, row) => row['usedQty'] + "/" + val + " db"},
+    {id: "qty", label: "Mennyiség", pattern: (val) => `${val} db`},
     {id: "summary", label: "Összeg", pattern: (val) => val + " HUF"},
     {id: "status", label: "Státusz", pattern: (val) =>  <span className={`ticket-status ${val}`}>{getStatus(val)}</span> },
     {id: "createdAt", label: "Dátum", pattern: (val) => moment(val).format('Y. M. D. - HH:mm:ss') },
@@ -42,7 +46,7 @@ function TicketList({getTickets, tickets}) {
   ]
 
   let _actions = (row) => <UseTicketBox ticket={row} />
-console.log("tickets", tickets);
+
   return (
     <div id="ticket-list" className="section">
       <div className="container">
@@ -50,11 +54,9 @@ console.log("tickets", tickets);
           <h1 className="block-title">Jegyek</h1>
         </div>
         <div className="actions">
-          <Button type="main" onClick={() => getTickets("today")}>Ma</Button>
-          <Button onClick={() => getTickets("week")}>Hét</Button>
-          <Button onClick={() => getTickets("month")}>Hónap</Button>
-          <Button onClick={() => getTickets()}>Összes</Button>
+          <Button type="main" onClick={() => getTodaySales()}>Ma felnasznált jegyek</Button>
         </div>
+        <LabeledInput name="search" placeholder="Keresés vagy név alapján" value={search} onChange={(e) => liveSearch(e.target.value)} />
         <div className="row ticket-list">
           <SortableTable
             dataKeys={dataKeys}
@@ -78,8 +80,11 @@ console.log("tickets", tickets);
 const mapStateToProps = state => ({ ...state.tickets})
 
 const mapDispatchToProps = dispatch => ({
-  getTickets: (query) => {
-    dispatch(getTickets(query))
+  getTodaySales: () => {
+    dispatch(getTodaySales())
+  },
+  getTicketsByCustomer: (email) => {
+    dispatch(getTicketsByCustomer(email))
   }
 })
 

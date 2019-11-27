@@ -1,27 +1,14 @@
-import React, { Component } from 'react';
-import { Table, Thead, Tr, Td, Th} from 'reactable';
-import LabeledInput from '../LabeledInput/LabeledInput';
+import React, { Component } from 'react'
+import { Table, Thead, Tr, Td, Th} from 'reactable'
 
 import './SortableTable.css'
 
 export default class Orders extends Component {
-  constructor(props){
-    super(props)
-
-    this.state = {filterBy: ""};
-
-    this.filter = this.filter.bind(this)
-  }
-
-  filter(e){
-    this.setState({filterBy: e.target.value})
-  }
-
   render(){
     let tableHeader = this.props.dataKeys.map((data, key) => {
       return(
         <Th key={key} column={data.id}>{data.label}</Th>
-      );
+      )
     })
 
     if (this.props.actions && this.props.actions.length > 0)
@@ -35,11 +22,11 @@ export default class Orders extends Component {
         let val = row[data.id]
 
         if (data.pattern)
-          val = data.pattern(val, row);
+          val = data.pattern(val, row)
 
           return(
             <Td key={key} data-label={data.label} column={data.id} className={row[data.id]}>{val}</Td>
-          );
+          )
       })
 
       if (this.props.actions){
@@ -52,10 +39,10 @@ export default class Orders extends Component {
         <Tr key={key} onClick={this.props.onClick !== undefined ? () => this.props.onClick(row._id) : undefined}>
           {rowData}
         </Tr>
-      );
+      )
     }) : []
 
-    let props = {...this.props};
+    let props = {...this.props}
     delete props.dataKeys
     delete props.data
     delete props.actions
@@ -64,13 +51,9 @@ export default class Orders extends Component {
 
     return(
       <div className="sortable-table-holder">
-        <div className="sortable-table-filter">
-          <LabeledInput type="text" value={this.state.filterBy} placeholder="Keresés" onChange={this.filter}/>
-        </div>
         <Table
           {...props}
           className={this.props.className ? this.props.className + " responsive-table sortable-table" : "responsive-table sortable-table"}
-          filterBy={this.state.filterBy ? this.state.filterBy : ""}
         >
         <Thead>
           {tableHeader}
@@ -78,6 +61,6 @@ export default class Orders extends Component {
           {tableContent.length > 0 ? tableContent : <Tr><Td column={this.props.dataKeys[0].id} >No data with this parameters</Td></Tr>}
         </Table>
       </div>
-    );
+    )
   }
 }

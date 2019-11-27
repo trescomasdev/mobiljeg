@@ -3,10 +3,37 @@ import { toast } from 'react-toastify'
 import request from '../utils/request'
 import { REMOTE_URL, BARIONKEY, BARIONURL, BARION_CALLBACK_URL, BARION_RETURN_URL } from '../config'
 
-export function getTickets(query = undefined){
+export function getTickets(){
   return function(dispatch, getState){
       dispatch({type: "FETCHING_TICKETS_STARTED"})
-      request.get(`${REMOTE_URL}/data/ticket/all${query ? `?query=${query}` : ""}`)
+      request.get(`${REMOTE_URL}/data/ticket/all`)
+        .then((response) => {
+          dispatch({type: "FETCHING_TICKETS_SUCCESS", payload: response.data})
+        })
+        .catch((err) => {
+          dispatch({type: "FETCHING_TICKETS_FAILED", payload: err.data})
+      })
+  }
+}
+
+export function getTodaySales(){
+  return function(dispatch, getState){
+      dispatch({type: "FETCHING_TICKETS_STARTED"})
+      request.get(`${REMOTE_URL}/data/ticket/today-sales`)
+        .then((response) => {
+          dispatch({type: "FETCHING_TICKETS_SUCCESS", payload: response.data})
+        })
+        .catch((err) => {
+          dispatch({type: "FETCHING_TICKETS_FAILED", payload: err.data})
+      })
+  }
+}
+
+export function getTicketsByCustomer(email){
+  return function(dispatch, getState){
+      if (!email || !(email.length >= 3)) return false
+      dispatch({type: "FETCHING_TICKETS_STARTED"})
+      request.get(`${REMOTE_URL}/data/ticket/customer?email=${email}`)
         .then((response) => {
           dispatch({type: "FETCHING_TICKETS_SUCCESS", payload: response.data})
         })
